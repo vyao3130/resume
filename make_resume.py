@@ -52,13 +52,34 @@ def format_exp(exp_file):
     
     return job_string
 
-def format_proj(proj_file):
+def format_proj(file):
     """
     Convert project into usable for .tex format
     """
+    job_info = convert_entry(file)
+    bulletPoints = job_info.get("bullet_points")
+    job_bulletPoints = ["\\resumeItem \{" + bullet + "\}" + "\n" for bullet in bulletPoints]
+
+    if "imageScraper" in file:
+        job_title = "\t\t\\resumeProjectHeading \n" +  \
+        "\t\t\t{\textbf{Photosaver (IN PROGRESS)} $|$ \emph{Python, Flask, React, PostgreSQL, Docker}}{June 2020 -- Present} \n" + \
+        "\t\t\t{ https://github.com/electronAccelerator/PhotoSaver} \n"
+    
+    if "ticket" in file:
+        job_title = "\t\t\\resumeProjectHeading \n" +  \
+        "\t\t\t{\textbf{TICKET SELLER (COMPLETED)} $|$ \emph{Python, Flask, React, PostgreSQL, Docker}}{June 2020 -- Present} \n" + \
+        "\t\t\t{ https://hub.docker.com/repository/docker/cisc327group42/brain-bench} \n"
+
+    job_string = "\t\t" + job_title + \
+                      "\t\t\t " + job_info.get("job_title") + "\n" + \
+                      "\t\t\t " + "\\resumeItemListStart \n" + \
+                      "\t\t\t\t" + "\t\t\t\t".join(job_bulletPoints)  +\
+                      "\t\t\t" + "\\resumeItemListEnd \n"
+    
+    return job_string
 
 
-def format_skills(input_file):
+def format_skills(file):
     """
     Convert skills into usable for .tex format
     """
@@ -68,7 +89,7 @@ def format_skills(input_file):
     else:
         input_file_name = input_file
     # Define the names of the input and output files
-    input_file = 'input_file.txt'
+    file = 'input_file.txt'
     output_file_name = 'resume.tex'
 
     with open(input_file_name, 'r') as input_file:
@@ -113,12 +134,17 @@ def main():
 
     # create tex file
     outputTex(beginning)
+    # experience section
     create_texfile = "\\section{Education } \n \t\\resumeSubHeadingListStart \n".append(experience_tex)
     create_texfile.append("\t\\resumeSubHeadingListEnd")
+    # project section
     create_texfile.append("\\section{Projects }\n \t\t\\resumeSubHeadingListStart \n".append(project_tex))
     create_texfile.append("\t\t\\resumeSubHeadingListEnd")
-    create_texfile.append(formatted_skills)
+    # formatted section
+    create_texfile.append(formatted_skills + "\n\n \\end{ document}")
 
+
+    # write content to the file
     outputTex(create_texfile)
 
     
