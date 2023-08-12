@@ -1,0 +1,10 @@
+Implemented a comprehensive data management and analysis solution for vast daily volumes of test data, using Python and C#.
+
+∠ Used Python and C# to develop a robust suite of data analysis and visualization tools, aimed at interpreting over 2,000 daily test data suites
+∠ Implemented version control strategies and unit testing for the suite of tools created, ensuring robust, reliable, and bug-free software
+∠ Leveraged these tools to identify patterns, trends, and anomalies, enabling data-driven decision making
+∠ Created and maintained data reports for easy understanding of complex datasets, allowing team members to monitor performance trends effectively
+∠ Collaborated with cross-functional teams in a modern, agile environment including regular sprint planning and daily stand-ups, contributing to the development of data-informed strategies for business improvement
+∠ Communicated complex data findings and insights effectively to the team in both written and verbal forms, leading to continuous changes in the suite of tools
+∠ Actively participated in continuous integration/continuous deployment (CI/CD) processes to ensure rapid deployment of updates and continuous improvement
+

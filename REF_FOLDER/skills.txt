@@ -1,0 +1,8 @@
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java, C#, Python, C/C++, React.js, Javascript, SQLite, Bash, Docker, Haskell, Prolog} \\
+     \textbf{Frameworks}{: Selenium, React, Flask, SQLite} \\
+     \textbf{Developer Tools}{: Git, Gerrit, Jenkins, Docker, VS Code, PyCharm, IntelliJ, Eclipse} \\
+    }}
+ \end{itemize}

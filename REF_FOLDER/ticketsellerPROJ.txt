@@ -1,0 +1,6 @@
+Created and deployed an online customer-to-customer ticket selling system.
+
+∠ Developed robust unit tests using Selenium for frontend and backend systems, ensuring comprehensive test coverage
+∠ Leveraged Flask and SQLite, to enhance user experience and optimize sales operations
+∠ Contributed to the frontend and backend codebase within a Scrum framework, driving collaborative development and
+continuous improvement

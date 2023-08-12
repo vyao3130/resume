@@ -114,9 +114,9 @@
 
 \begin{center}
     \textbf{\Huge \scshape Vivian Yao} \\ \vspace{1pt}
-    \small 416-912-8368 $|$ \href{mailto:x@x.com}{\underline{vyao3130@gmail.com}} $|$ 
-    \href{https://linkedin.com/in/...}{\underline{linkedin.com/in/vivian-yao}} $|$
-    \href{https://github.com/...}{\underline{github.com/vyao3130}}
+    \small 416-912-8368 $|$ \href{mailto:vyao3130@gmail.com}{\underline{vyao3130@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/vivian-yao}{\underline{linkedin.com/in/vivian-yao}} $|$
+    \href{https://github.com/vyao3130}{\underline{github.com/vyao3130}}
 \end{center}
 
 

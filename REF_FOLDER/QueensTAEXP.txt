@@ -1,0 +1,5 @@
+Served as an instructor for a software specification course, emphasizing the application of software behavior methodologies in software design, verification, and construction
+
+∠ Led tutorial sessions and provided individual assistance to students on automata and grammar-based techniques, highlighting their practical application in scanners, parsers, user-interface dialogs, and embedded systems
+∠ Assessed student assignments and exams, providing valuable feedback and contributing to overall grading and evaluation processes
+∠ Fostered an environment of continuous learning and improvement, encouraging the application of constructive feedback and peer mentorship, mirroring the values of the Sentry engineering team
