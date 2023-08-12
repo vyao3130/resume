@@ -2,20 +2,14 @@ import subprocess
 import pyperclip
 import argparse
 import sys
+import shutil
+import os
+
+
 parser = argparse.ArgumentParser()                                               
 
-
-
-def read_file_as_string(file_path):
-    with open(file_path, 'r') as file:
-        file_contents = file.read()
-    return file_contents
-
-# Example usage
-file_path = args.file
-file_string = read_file_as_string(file_path)
-print(file_string)
-
+RESUME_NAME = "resume.tex"
+PATH_TO_RESUME_BEGINNING = "C:\Users\Vivian\Documents\resume\beginning_resume.sty"
 
 def convert_entry(file):
     """
@@ -100,16 +94,23 @@ def format_skills(file):
     print(f'Content from {input_file_name} has been copied to {output_file_name}.')
 
     
-def outputTex(content):
-    with open('resume.tex', 'w') as output_file:
+def outputTex(content, destination):
+    with open(destination, 'w') as output_file:
             output_file.write(content)
 
 def main():
     parser.add_argument("--files", "-f", type=str, nargs='*', help="The files to be formatted into the resume. Must" + \
-                        " have:\n -exp \n -proj \n -skill(optional) in each file. ",required=True)
+                        " have:\n -exp \n -proj \n -skill(optional) in each file. ",required=False)
     args = parser.parse_args()
     files = args.files
 
+    curr_dir = os.getcwd()
+
+    # No files specified by user, default to ALL files in the folder
+    if not files:
+        files = [file for file in curr_dir if os.path.isfile(curr_dir)]
+
+    # Sort through the files and take the ones with specific names for use
     for file in files:
         if "exp" in file:
             formatted_experience = format_exp(file)
@@ -121,19 +122,26 @@ def main():
             print(f"The file {file} is being formatted for use in the project section")
         elif "skill" in file:
             formatted_skills = format_skills(file)
-            
+            print(f"The file {file} is being formatted for use in the skill section")
         else:
             print(f"The file {file} is not recognized by this script.")
             sys.exit(0)
-    
+
+    # Error checking for no formatted input
     if not formatted_experience:
         print("There was no experience file found. Exiting...")
         sys.exit(1)
     if not formatted_project:
         print("There was no project file found. Exiting...")
+        sys.exit(1)
 
-    # create tex file
-    outputTex(beginning)
+    # create tex file with beginning
+    shutil.copy(PATH_TO_RESUME_BEGINNING, RESUME_NAME)
+    # Original file path
+
+    # New file path (duplicate)
+    new_file_path = os.getcwd() + RESUME_NAME
+
     # experience section
     create_texfile = "\\section{Education } \n \t\\resumeSubHeadingListStart \n".append(experience_tex)
     create_texfile.append("\t\\resumeSubHeadingListEnd")
@@ -145,7 +153,7 @@ def main():
 
 
     # write content to the file
-    outputTex(create_texfile)
+    outputTex(create_texfile, new_file_path)
 
     
 if __name__ == "__main__":
