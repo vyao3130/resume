@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser()
 
 RESUME_NAME = "resume.tex"
 PATH_TO_RESUME_BEGINNING = r"C:\Users\Vivian\Documents\resume\beginning_resume.txt"
-PATH_TO_DEFAULT_SKILLS = r"C:\Users\Vivian\Documents\resume\skills.txt"
+PATH_TO_DEFAULT_SKILLS = r"C:\Users\Vivian\Documents\resume\REF_FOLDER\skills.txt"
 
 def convert_entry(file):
     """
@@ -50,8 +50,7 @@ def format_exp(exp_file, folder):
                       "\t\t\t\t" + "\t\t\t\t".join(job_bulletPoints)  +\
                       "\t\t\t" + "\\resumeItemListEnd \n"
     
-    cleaned_string = job_string.replace('#', '\\#')
-    return cleaned_string
+    return job_string
 
 def format_proj(file, folder):
     """
@@ -77,8 +76,7 @@ def format_proj(file, folder):
                       "\t\t\t\t" + "\t\t\t\t".join(job_bulletPoints)  +\
                       "\t\t\t" + "\\resumeItemListEnd \n"
     
-    cleaned_string = job_string.replace('#', '\\#')
-    return cleaned_string
+    return job_string
 
 
 # def format_skills(file):
@@ -101,7 +99,7 @@ def format_proj(file, folder):
 
 #     print(f'Content from {input_file_name} has been copied to {output_file_name}.')
 
-    
+
 def outputTex(content, destination):
     with open(destination, 'a') as output_file:
             output_file.write(content)
@@ -163,15 +161,20 @@ def main():
 
     shutil.copy(PATH_TO_RESUME_BEGINNING, new_file_path)
 
+    # adding skills at the end
+    with open(PATH_TO_DEFAULT_SKILLS, 'r') as source_file:
+        skill_content = source_file.read()
+
     # experience section
     create_texfile = "\n\\section{Education } \n \t\\resumeSubHeadingListStart" + f"{experience_tex}" + \
     "\t\\resumeSubHeadingListEnd\n" + \
     "\n\\section{Projects }\n \t\t\\resumeSubHeadingListStart" + f"{project_tex}" +\
-    "\t\t\\resumeSubHeadingListEnd" + \
+    "\t\t\\resumeSubHeadingListEnd\n\n" + f"{skill_content}" +\
     "\n\n \\end{" + "document}"
     # formatted section
     # create_texfile.append(formatted_skills + "\n\n \\end{ document}") +  \
-
+    
+    create_texfile = create_texfile.replace('#', '\\#')
     # write content to the file
     outputTex(create_texfile, new_file_path)
     print(f"Resume file can be found at {new_file_path}")
