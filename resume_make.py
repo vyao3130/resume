@@ -8,7 +8,7 @@ import os
 
 parser = argparse.ArgumentParser()                                               
 
-RESUME_NAME = "resume.tex"
+RESUME_NAME = "vyao_resume.tex"
 PATH_TO_RESUME_BEGINNING = r"C:\Users\Vivian\Documents\resume\beginning_resume.txt"
 PATH_TO_DEFAULT_SKILLS = r"C:\Users\Vivian\Documents\resume\REF_FOLDER\skills.txt"
 
@@ -104,6 +104,22 @@ def outputTex(content, destination):
     with open(destination, 'a') as output_file:
             output_file.write(content)
 
+def compile_pdf(tex_file, folder):
+    try:
+        # Running pdflatex on the specified tex file
+        process = subprocess.run(f'pdflatex -output-directory {folder} {tex_file}', check=True)
+        
+        # If the return code is zero, the compilation was successful
+        if process.returncode == 0:
+            print(f"PDF has been successfully compiled from {tex_file} into {folder}")
+        else:
+            print(f"Error compiling PDF from {tex_file}")
+
+    except FileNotFoundError:
+        print("pdflatex not found. Please install TeX distribution.")
+    except subprocess.CalledProcessError as e:
+        print(f"An error occurred during the compilation: {str(e)}")
+
 def main():
     # parser.add_argument("--files", "-f", type=str, nargs='*', help="The files to be formatted into the resume. Must" + \
     #                     " have:\n -exp \n -proj \n -skill(optional) in each file. ",required=False)
@@ -176,9 +192,9 @@ def main():
     
     create_texfile = create_texfile.replace('#', '\\#')
     # write content to the file
-    outputTex(create_texfile, new_file_path)
-    print(f"Resume file can be found at {new_file_path}")
-
+    outputTex(create_texfile, str(new_file_path))
+    print(f"Resume .tex file can be found at {new_file_path}")
+    compile_pdf(new_file_path, folder)
     
 if __name__ == "__main__":
     main()

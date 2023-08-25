@@ -1,5 +1,3 @@
-Implemented a comprehensive data management and analysis solution for vast daily volumes of test data, using Python and C#.
-
 ∠ Used Python and C# to develop a robust suite of data analysis and visualization tools, aimed at interpreting over 2,000 daily test data suites
 ∠ Implemented version control strategies and unit testing for the suite of tools created, ensuring robust, reliable, and bug-free software
 ∠ Leveraged these tools to identify patterns, trends, and anomalies, enabling data-driven decision making
