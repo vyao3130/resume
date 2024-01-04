@@ -1,9 +1,0 @@
-Developed, tested, and executed specifications for an inclusive web user interface (UI) with a tag-based database, tailored specifically for students, artists, and graphic designers.
-
-∠ Leveraged React and JavaScript to create an accessible and user-friendly web UI with a tag-based database, catering to the specific needs of students, artists, and graphic designers
-∠ Ensured full software development lifecycle management, encompassing design, development, testing, and operating in production
-∠ Incorporated version control methods and performed unit testing for the suite of tools developed, assuring reliable and bug-free software solutions
-∠ Integrated APIs from popular image hosting platforms like Tumblr and Twitter to offer seamless and extensive access to image sources, demonstrating experience in handling complex data
-∠ Automated the saving and sourcing of images using Selenium to further streamline the process, showcasing the ability to write efficient, scalable, and highly reliable software
-∠ Collaborated effectively with a diverse team and communicated complex technical solutions, demonstrating strong interpersonal and communication skills
-∠ Acted upon feedback and coaching from team members and mentors, displaying an eagerness to learn and improve within a dynamic software development team environment.

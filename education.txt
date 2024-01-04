@@ -1,0 +1,7 @@
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      { Queen’s University}{Kingston, ON}
+      {Bachelor of Computing (Honours), Specialization in Software Development}{Sept. 2018 -- May 2023}
+  \resumeSubHeadingListEnd

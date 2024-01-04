@@ -1,0 +1,23 @@
+{
+    "receptionistEXP.txt" :{
+        "job_title": "Receptionist",
+        "time_span": "Oct 2023 - Current",
+        "time" : "1",
+        "company":"University Plumbing",
+        "location":"Toronto"
+    },
+    "ericssonEXP.txt":{
+        "job_title": "5G Software Developer",
+        "time_span": "Sept 2021 - Sept 2022",
+        "time" : "3",
+        "company":"Ericsson",
+        "location":"Ottawa"
+    },
+    "QueensTAEXP.txt":{
+        "job_title": "Programming Teaching Assistant",
+        "time" : "2",
+        "time_span": "Sept 2022 - Jan 2023",
+        "company":"Queen's University",
+        "location":"Kingston"
+    }
+}

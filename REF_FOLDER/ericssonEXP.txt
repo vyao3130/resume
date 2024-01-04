@@ -1,8 +1,6 @@
-∠ Used Python and C# to develop a robust suite of data analysis and visualization tools, aimed at interpreting over 2,000 daily test data suites
-∠ Implemented version control strategies and unit testing for the suite of tools created, ensuring robust, reliable, and bug-free software
-∠ Leveraged these tools to identify patterns, trends, and anomalies, enabling data-driven decision making
-∠ Created and maintained data reports for easy understanding of complex datasets, allowing team members to monitor performance trends effectively
-∠ Collaborated with cross-functional teams in a modern, agile environment including regular sprint planning and daily stand-ups, contributing to the development of data-informed strategies for business improvement
-∠ Communicated complex data findings and insights effectively to the team in both written and verbal forms, leading to continuous changes in the suite of tools
-∠ Actively participated in continuous integration/continuous deployment (CI/CD) processes to ensure rapid deployment of updates and continuous improvement
-
+Developed a comprehensive suite of data analysis and visualization tools using Python and C# to analyze 2,000 suites of generated tests created by the 5G network device, boosting the team's ability to read device performance effectively
+Participated in design and architectural discussions, emphasizing testability and automation impact.
+Developed and executed comprehensive test plans for created suite of tools, with a focus on maximizing automation across varying levels of complexity.
+Managed the project test activities, ensuring alignment with quality engineering best practices.
+Implemented and maintained CI/CD pipelines, utilizing automation tools for build/deploy processes through Jenkins.
+Provided documentation on how to use and add to the tools to team members.
